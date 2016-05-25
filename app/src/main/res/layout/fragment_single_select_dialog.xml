@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:layout_marginTop="@dimen/margin_default"
+			  android:layout_marginBottom="@dimen/margin_default"
+			  tools:context=".ui.dialogs.SingleSelectDialogFragment"
+			  android:background="@drawable/shape_default_white_rounded"
+	>
+
+	<ListView
+		android:id="@+id/listview_items"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:divider="@color/light_gray"
+		android:dividerHeight="1px"
+		/>
+
+</LinearLayout>

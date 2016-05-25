@@ -1,0 +1,59 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent"
+			 android:minWidth="@dimen/dialog_min_width"
+			 android:paddingLeft="@dimen/margin_default"
+			 android:paddingRight="@dimen/margin_default"
+			 android:background="@color/transparent"
+	>
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				  android:layout_width="match_parent"
+				  android:layout_height="match_parent"
+				  android:orientation="vertical"
+		>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="right"
+			>
+			<!-- Title -->
+			<TextView
+				android:id="@+id/label_dialog_title"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				style="@style/AppTheme.InputGroupTitle"
+				/>
+			<!-- X button -->
+			<ImageButton
+				android:id="@+id/btn_popup_close"
+				android:layout_width="17dp"
+				android:layout_height="17dp"
+				android:layout_marginLeft="@dimen/dialog_title_text_margin"
+				android:layout_marginBottom="@dimen/dialog_title_text_margin"
+				android:scaleType="centerInside"
+				android:background="@drawable/ic_close_popup"
+				android:visibility="gone"
+				/>
+		</LinearLayout>
+		<!-- Content -->
+		<FrameLayout
+			android:id="@+id/panel_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+		<Button
+			android:id="@+id/btn_dialog_confirm"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/popup_default_input_height"
+			android:layout_marginTop="0dp"
+			android:background="@drawable/shape_popup_btn_bottom"
+			android:text="@string/text_OK"
+			style="@style/AppTheme.InputGroupConfirmButton"
+			/>
+	</LinearLayout>
+</FrameLayout>

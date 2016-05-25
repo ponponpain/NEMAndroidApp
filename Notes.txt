@@ -1,0 +1,8 @@
+Project specs: http://bob.nem.ninja/docs/
+
+* project Major version and Minor version can be set in /app/version.properties manually.
+ Build/production build versions are managed automatically by build system, there's no need to edit them.
+
+* models that are sent/returned from API, have suffix ApiDto.
+    If in original specs it has ViewModel suffix, it's omitted, e.g. KeyPairViewModel => KeyPairApiDto;
+* account salt is not used for generating passwords.

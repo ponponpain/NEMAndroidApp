@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:id="@+id/toolbar_bottom"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:orientation="horizontal"
+			  android:paddingTop="@dimen/bottom_toolbar_padding_vert"
+			  android:paddingBottom="@dimen/bottom_toolbar_padding_vert"
+			  android:background="@drawable/shape_toolbar_bottom"
+			  android:layout_alignParentBottom="true"
+			  android:animateLayoutChanges="true"
+	>
+	<TextView
+		android:id="@+id/toolbar_btn_msgs"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:gravity="center_horizontal|bottom"
+		android:drawableTop="@drawable/ic_hd_tbar_messages"
+		android:drawablePadding="@dimen/bottom_toolbar_drawable_padding"
+		android:text="@string/toolbar_btn_dashboard"
+		android:textSize="@dimen/text_size_smaller"
+		android:textColor="@color/default_black"
+		/>
+
+	<TextView
+		android:id="@+id/toolbar_btn_address_book"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:gravity="center_horizontal|bottom"
+		android:drawableTop="@drawable/ic_hd_tbar_address_book"
+		android:drawablePadding="@dimen/bottom_toolbar_drawable_padding"
+		android:text="@string/toolbar_btn_addr_book"
+		android:textSize="@dimen/text_size_smaller"
+		android:textColor="@color/default_black"
+		/>
+
+	<TextView
+		android:id="@+id/toolbar_btn_qr"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:gravity="center_horizontal|bottom"
+		android:drawableTop="@drawable/ic_hd_tbar_qr"
+		android:drawablePadding="@dimen/bottom_toolbar_drawable_padding"
+		android:text="@string/toolbar_btn_qr"
+		android:textSize="@dimen/text_size_smaller"
+		android:textColor="@color/default_black"
+		/>
+
+	<TextView
+		android:id="@+id/toolbar_btn_more"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:gravity="center_horizontal|bottom"
+		android:drawableTop="@drawable/ic_hd_tbar_more"
+		android:drawablePadding="@dimen/bottom_toolbar_drawable_padding"
+		android:textSize="@dimen/text_size_smaller"
+		android:text="@string/toolbar_btn_more"
+		/>
+
+</LinearLayout>

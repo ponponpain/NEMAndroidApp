@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layout_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/white"
+	tools:context="org.nem.nac.ui.activities.AddAccountActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="?attr/actionBarSize"
+		android:orientation="vertical"
+		>
+		<!-- Add account -->
+		<Button
+			android:id="@+id/btn_add_account"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/top_bar_height"
+			android:background="@color/default_gray_background"
+			android:drawableLeft="@drawable/ic_hd_add"
+			android:drawableStart="@drawable/ic_hd_add"
+			android:paddingLeft="@dimen/default_side_padding"
+			android:paddingRight="@dimen/default_side_padding"
+			android:text="@string/btn_add_account"
+			android:gravity="center_vertical|start"
+			android:textColor="@color/official_green"
+			android:drawablePadding="@dimen/default_side_padding"/>
+
+		<com.terlici.dragndroplist.DragNDropListView
+			android:id="@+id/listview_accounts"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="@dimen/default_side_padding"
+			android:paddingRight="@dimen/default_side_padding"
+			style="@style/AppTheme.ListView"
+			/>
+	</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

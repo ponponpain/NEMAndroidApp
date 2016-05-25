@@ -1,0 +1,56 @@
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="@dimen/margin_default"
+	tools:context="org.nem.nac.ui.fragments.MsigAddCosigsFragment"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<!--From-->
+		<LinearLayout
+			android:id="@+id/panel_from"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="@dimen/inputs_vert_margin"
+			android:gravity="center_vertical"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/label_from_colon"
+				android:textColor="@color/default_black"
+				/>
+
+			<Spinner
+				android:id="@+id/spinner_accounts"
+				android:layout_width="wrap_content"
+				android:layout_height="@dimen/default_input_height"
+				style="@style/AppTheme.Spinner"
+				/>
+		</LinearLayout>
+		<!--Cosigs list-->
+		<org.nem.nac.ui.controls.DeletableCosignatoriesLinearList
+			android:id="@+id/linear_list_cosignatories"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			/>
+
+		<Button
+			android:id="@+id/btn_do_delete_cosigs"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/action_btn_top_margin"
+			android:layout_gravity="center_horizontal"
+			style="@style/AppTheme.ActionButton"
+			android:text="@string/btn_confirm_delete_cosigs"
+			/>
+	</LinearLayout>
+</ScrollView>

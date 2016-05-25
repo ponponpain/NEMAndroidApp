@@ -1,0 +1,36 @@
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="@dimen/popup_content_top_padding"
+	android:orientation="vertical"
+	android:background="@drawable/shape_popup_content"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<org.nem.nac.ui.controls.ProtocolInput
+		android:id="@+id/input_protocol"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/input_hint_protocol"
+		style="@style/AppTheme.InputGroupDefaultInput"
+		android:selectAllOnFocus="true"
+		android:imeOptions="actionNext"
+		/>
+
+	<org.nem.nac.ui.controls.HostInput
+		android:id="@+id/input_host"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/input_hint_hostname_or_ip"
+		style="@style/AppTheme.InputGroupDefaultInput"
+		android:imeOptions="actionNext"
+		/>
+
+	<org.nem.nac.ui.controls.PortInput
+		android:id="@+id/input_port"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/input_hint_port"
+		style="@style/AppTheme.InputGroupInputBorderless"
+		android:imeOptions="actionDone"
+		/>
+</LinearLayout>

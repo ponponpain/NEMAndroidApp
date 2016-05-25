@@ -1,0 +1,78 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@drawable/shape_popup_content"
+	tools:context="org.nem.nac.ui.dialogs.InvoiceMessageDialogFragment">
+
+	<!--Prefix/postfix-->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		>
+
+		<EditText
+			android:id="@+id/input_prefix"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:singleLine="true"
+			android:maxLines="1"
+			android:gravity="center_vertical|right"
+			style="@style/AppTheme.InputGroupDefaultInput"
+			android:textSize="@dimen/text_size_medium"
+			android:hint="@string/input_hint_invoice_prefix"
+			/>
+
+		<TextView
+			android:id="@+id/label_invoice_number_label"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:paddingLeft="@dimen/margin_small_text"
+			android:paddingRight="@dimen/margin_small_text"
+			android:gravity="center"
+			android:textSize="@dimen/text_size_medium"
+			android:textColor="@color/default_black"
+			android:background="@drawable/shape_input_border_bottom"
+			/>
+
+		<EditText
+			android:id="@+id/input_postfix"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:singleLine="true"
+			style="@style/AppTheme.InputGroupDefaultInput"
+			android:textSize="@dimen/text_size_medium"
+			android:hint="@string/input_hint_invoice_postfix"
+			/>
+	</LinearLayout>
+
+	<EditText
+		android:id="@+id/input_message"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		style="@style/AppTheme.InputGroupDefaultInput"
+		android:singleLine="true"
+		android:maxLines="1"
+		android:hint="@string/input_hint_invoice_message"
+		/>
+
+	<TextView
+		android:id="@+id/label_invoice_message_overall_length"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		style="@style/AppTheme.InputGroupInputBorderless"
+		android:minHeight="0dp"
+		android:paddingTop="@dimen/default_input_vert_padding"
+		android:paddingBottom="@dimen/default_input_vert_padding"
+		android:gravity="right"
+		android:text="@string/label_invoice_message_overall_length"
+		android:textColor="@color/official_gray"
+		android:textSize="@dimen/text_size_small"
+		/>
+
+</LinearLayout>

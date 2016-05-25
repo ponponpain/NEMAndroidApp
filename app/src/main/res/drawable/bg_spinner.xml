@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item>
+		<shape
+			android:shape="rectangle">
+			<corners
+				android:radius="@dimen/spinner_corner_radius"
+				/>
+			<solid android:color="@color/transparent"/>
+			<stroke
+				android:width="1dp"
+				android:color="@color/official_green"/>
+			<padding
+				android:top="@dimen/spinner_shape_padding"
+				android:bottom="@dimen/spinner_shape_padding"
+				android:left="@dimen/spinner_shape_padding"
+				android:right="@dimen/spinner_shape_padding"/>
+		</shape>
+	</item>
+	<item android:right="@dimen/spinner_corner_radius">
+		<bitmap
+			android:gravity="center_vertical|right"
+			android:src="@drawable/ic_hd_drop_down_arrow"/>
+	</item>
+</layer-list>

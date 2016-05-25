@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/view_activity_root"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	tools:context="org.nem.nac.ui.activities.MultisigActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+
+		<android.support.design.widget.TabLayout
+			android:id="@+id/tabs"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:tabMode="fixed"
+			app:tabGravity="fill"
+			app:tabBackground="@color/official_green"
+			app:tabIndicatorColor="@color/white"
+			/>
+	</android.support.design.widget.AppBarLayout>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginBottom="?attr/actionBarSize"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		tools:context="org.nem.nac.ui.activities.QrTabsActivity">
+
+		<android.support.v4.view.ViewPager
+			android:id="@+id/viewpager"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentTop="true"
+			android:layout_above="@+id/toolbar_bottom"
+			android:layout_alignWithParentIfMissing="true"
+			/>
+
+		<include layout="@layout/toolbar_bottom"/>
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

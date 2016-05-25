@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_margin="0dp"
+	android:paddingLeft="@dimen/default_side_padding_edittext"
+	android:paddingRight="@dimen/default_side_padding_edittext"
+	style="?android:attr/spinnerItemStyle"
+	android:gravity="center_vertical"
+	android:minHeight="@dimen/popup_default_input_height"
+	android:background="@color/transparent"
+	android:ellipsize="middle"
+	android:focusable="false"
+	android:textSize="@dimen/text_size_small"
+	>
+</TextView>

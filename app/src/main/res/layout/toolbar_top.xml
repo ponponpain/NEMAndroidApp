@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+	   xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<android.support.v7.widget.Toolbar
+		android:id="@+id/toolbar_top"
+		android:layout_width="match_parent"
+		android:layout_height="?attr/actionBarSize"
+		app:popupTheme="@style/AppTheme.PopupOverlay"
+		app:contentInsetLeft="0dp"
+		app:contentInsetStart="0dp"
+		android:contentInsetLeft="0dp"
+		android:contentInsetStart="0dp"
+		app:layout_scrollFlags="scroll|enterAlways"
+		style="@style/AppTheme.TopToolbar"
+		>
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			>
+
+			<!--Left icon-->
+			<ImageView
+				android:id="@+id/toolbar_left_icon"
+				android:layout_width="?attr/actionBarSize"
+				android:layout_height="?attr/actionBarSize"
+				android:layout_alignParentLeft="true"
+				android:layout_alignParentStart="true"
+				android:scaleType="center"
+				android:clickable="true"
+				android:src="@drawable/ic_hd_back_arrow"
+				/>
+			<!--Title-->
+			<TextView
+				android:id="@+id/toolbar_title"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="?attr/actionBarSize"
+				android:layout_marginRight="?attr/actionBarSize"
+				android:layout_centerInParent="true"
+				style="@style/AppTheme.Toolbar.Title"
+				/>
+			<!--Right icon-->
+			<LinearLayout
+				android:id="@+id/toolbar_right_panel"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:minWidth="?attr/actionBarSize"
+				android:orientation="horizontal"
+				android:layout_alignParentRight="true"
+				android:layout_alignParentEnd="true"
+				android:gravity="center"
+				android:clickable="false"
+				>
+
+				<TextView
+					android:id="@+id/toolbar_right_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="@color/white"
+					android:clickable="false"
+					android:visibility="gone"
+					/>
+
+				<ImageView
+					android:id="@+id/toolbar_right_icon"
+					android:layout_width="?attr/actionBarSize"
+					android:layout_height="match_parent"
+					android:scaleType="center"
+					android:clickable="false"
+					android:visibility="gone"
+					/>
+			</LinearLayout>
+		</RelativeLayout>
+	</android.support.v7.widget.Toolbar>
+</merge>

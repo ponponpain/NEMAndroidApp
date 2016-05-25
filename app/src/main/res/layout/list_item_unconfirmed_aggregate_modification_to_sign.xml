@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:paddingLeft="@dimen/margin_default"
+			  android:paddingRight="@dimen/margin_default"
+	>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:layout_marginLeft="@dimen/margin_small"
+		android:text="@string/label_from_colon"
+		/>
+
+	<TextView
+		android:id="@+id/text_view_from"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:textColor="@color/default_black"
+		android:textSize="@dimen/text_size_medium"
+		/>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:layout_marginLeft="@dimen/margin_small"
+		android:text="@string/label_to_colon"
+		/>
+
+	<TextView
+		android:id="@+id/text_view_to"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:textColor="@color/default_black"
+		android:textSize="@dimen/text_size_medium"
+		/>
+	<!--Show changes button-->
+	<TextView
+		android:id="@+id/btn_show_changes"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="100dp"
+		android:minHeight="@dimen/default_input_height"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:paddingLeft="@dimen/margin_small"
+		android:paddingRight="@dimen/margin_small"
+		android:clickable="true"
+		android:gravity="center"
+		android:layout_gravity="center_horizontal"
+		android:background="@drawable/shape_green_rounded"
+		android:text="@string/button_show_changes_text"
+		android:textSize="@dimen/text_size_medium"
+		android:textColor="@color/white"
+		/>
+	<!--Confirm button-->
+	<TextView
+		android:id="@+id/btn_confirm"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="100dp"
+		android:minHeight="@dimen/default_input_height"
+		android:layout_marginTop="@dimen/inputs_vert_margin"
+		android:clickable="true"
+		android:gravity="center"
+		android:layout_gravity="center_horizontal"
+		android:background="@drawable/shape_green_rounded"
+		android:text="@string/button_confirm_text"
+		android:textSize="@dimen/text_size_medium"
+		android:textColor="@color/white"
+		/>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="@dimen/margin_small"
+		android:background="@color/light_gray"
+		/>
+</LinearLayout>

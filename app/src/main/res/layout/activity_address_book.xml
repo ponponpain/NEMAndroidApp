@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layout_coordinator"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/white"
+	tools:context="org.nem.nac.ui.activities.AddressBookActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="?attr/actionBarSize"
+		>
+		<!-- Add contact -->
+		<Button
+			android:id="@+id/btn_add_contact"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/top_bar_height"
+			android:layout_alignParentTop="true"
+			android:background="@color/default_gray_background"
+			android:drawableLeft="@drawable/ic_hd_add"
+			android:drawableStart="@drawable/ic_hd_add"
+			android:paddingLeft="@dimen/default_side_padding"
+			android:paddingRight="@dimen/default_side_padding"
+			android:text="@string/btn_add_contact"
+			android:textSize="@dimen/text_size_medium"
+			android:gravity="center_vertical|start"
+			android:textAllCaps="false"
+			android:textStyle="normal"
+			android:textColor="@color/official_green"
+			android:drawablePadding="@dimen/default_side_padding"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_below="@+id/btn_add_contact"
+			android:layout_above="@+id/toolbar_bottom"
+			android:paddingLeft="@dimen/margin_default"
+			android:paddingRight="@dimen/margin_default"
+			android:paddingBottom="@dimen/margin_default"
+			>
+			<!--Search-->
+			<EditText
+				android:id="@+id/input_search"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+				android:minHeight="@dimen/default_input_height"
+				android:layout_marginTop="@dimen/margin_small"
+				android:background="@color/transparent"
+				android:drawableRight="@drawable/ic_hd_search"
+				/>
+			<!--Separator-->
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="1px"
+				android:background="@color/light_gray"/>
+			<!--Contacts-->
+			<ListView
+				android:id="@+id/listview_contacts"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:divider="@color/light_gray"
+				android:dividerHeight="1px"
+				>
+			</ListView>
+
+		</LinearLayout>
+
+		<include layout="@layout/toolbar_bottom"/>
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

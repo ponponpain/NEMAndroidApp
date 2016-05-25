@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content"
+			  android:minWidth="@dimen/dialog_min_width"
+			  android:layout_marginLeft="@dimen/margin_default"
+			  android:layout_marginRight="@dimen/margin_default"
+			  android:orientation="vertical"
+			  android:background="@color/transparent">
+
+	<!--Title bar-->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		>
+		<!-- Title -->
+		<TextView
+			android:id="@+id/label_dialog_title"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			style="@style/AppTheme.InputGroupTitle"
+			/>
+		<!-- X button -->
+		<ImageButton
+			android:id="@+id/btn_popup_close"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/dialog_title_text_margin"
+			android:layout_marginBottom="@dimen/dialog_title_text_margin"
+			android:layout_gravity="bottom|end"
+			android:scaleType="centerInside"
+			android:background="@drawable/ic_close_popup"
+			android:visibility="gone"
+			/>
+	</LinearLayout>
+	<!-- Content -->
+	<ListView
+		android:id="@+id/listview_accounts"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="@dimen/margin_default"
+		android:choiceMode="singleChoice"
+		android:dividerHeight="1px"
+		android:divider="@color/light_gray"
+		android:background="@drawable/shape_default_white_rounded"
+		android:clickable="true"
+		/>
+</LinearLayout>

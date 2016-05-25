@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/list_item_default_height"
+	android:paddingLeft="@dimen/margin_default"
+	android:paddingRight="@dimen/margin_default"
+	>
+
+	<CheckedTextView
+		android:id="@+id/checkedtext_item"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:checkMark="@drawable/radio_button"
+		android:gravity="center_vertical"
+		android:textColor="@color/default_black"
+		android:maxLines="2"
+		android:ellipsize="end"
+		/>
+</FrameLayout>

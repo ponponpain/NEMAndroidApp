@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/default_gray_background"
+	tools:context="org.nem.nac.ui.activities.DashboardActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+	<!--Content-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="?attr/actionBarSize"
+		android:background="@color/transparent"
+		>
+		<!--Top bar-->
+		<LinearLayout
+			android:id="@+id/layout_top_bar"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/top_bar_height"
+			android:paddingLeft="@dimen/margin_small"
+			android:paddingRight="@dimen/margin_small"
+			android:layout_alignParentTop="true"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:background="@color/white"
+			>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				>
+
+				<TextView
+					android:id="@+id/label_account_name"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:textColor="@color/default_black"
+					android:textSize="@dimen/abc_text_size_medium_material"
+					android:maxLines="2"
+					android:ellipsize="end"
+					/>
+
+				<TextView
+					android:id="@+id/field_balance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/medium_letter_approx_size"
+					android:layout_marginStart="@dimen/medium_letter_approx_size"
+					android:textSize="@dimen/abc_text_size_medium_material"
+					android:textColor="@color/official_green"
+					android:singleLine="true"
+					android:maxLines="1"
+					android:visibility="gone"
+					/>
+			</LinearLayout>
+		</LinearLayout>
+
+		<ListView
+			android:id="@+id/listview_dashboard"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_small"
+			android:layout_marginBottom="@dimen/margin_small"
+			android:paddingLeft="@dimen/margin_small"
+			android:paddingRight="@dimen/margin_small"
+			android:layout_below="@id/layout_top_bar"
+			android:layout_above="@+id/toolbar_bottom"
+			android:background="@color/transparent"
+		    android:divider="@color/transparent"
+			android:dividerHeight="5.0dp"
+			>
+		</ListView>
+
+		<include
+			layout="@layout/toolbar_bottom"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			/>
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

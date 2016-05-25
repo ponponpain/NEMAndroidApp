@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:minWidth="@dimen/dialog_min_width"
+			  android:paddingLeft="@dimen/margin_default"
+			  android:paddingRight="@dimen/margin_default"
+			  android:orientation="vertical"
+			  android:background="@color/transparent"
+	>
+
+	<!--Concept: Title bar with close / Content / button-->
+
+	<!--TITLE BAR-->
+	<LinearLayout
+		android:id="@+id/dialog_title_bar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="bottom|right"
+		android:paddingBottom="@dimen/dialog_title_bar_bottom_padding"
+		>
+		<!-- Title -->
+		<TextView
+			android:id="@+id/label_dialog_title"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginLeft="@dimen/dialog_close_button_size"
+			android:paddingLeft="@dimen/dialog_title_text_margin"
+			android:paddingRight="@dimen/dialog_title_text_margin"
+			style="@style/AppTheme.InputGroupTitle"
+			android:visibility="gone"
+			/>
+		<!-- X button -->
+		<ImageButton
+			android:id="@+id/btn_popup_close"
+			android:layout_width="@dimen/dialog_close_button_size"
+			android:layout_height="@dimen/dialog_close_button_size"
+			android:layout_marginBottom="@dimen/margin_small"
+			android:scaleType="centerInside"
+			android:background="@drawable/ic_close_popup"
+			android:visibility="invisible"
+			/>
+	</LinearLayout>
+
+	<!-- Content (transparent, background should be set in content's root view) -->
+	<FrameLayout
+		android:id="@+id/panel_content"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/transparent"
+		/>
+
+	<!--Confirm button-->
+	<Button
+		android:id="@+id/btn_dialog_confirm"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="@dimen/popup_default_input_height"
+		android:layout_marginTop="0dp"
+		android:background="@drawable/shape_popup_btn_bottom"
+		android:text="@string/text_OK"
+		style="@style/AppTheme.InputGroupConfirmButton"
+		/>
+</LinearLayout>

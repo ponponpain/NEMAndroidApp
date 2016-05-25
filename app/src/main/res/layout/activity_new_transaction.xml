@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/view_activity_root"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/white"
+	tools:context="org.nem.nac.ui.activities.NewTransactionActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+
+	<!--Content-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="?attr/actionBarSize"
+		>
+
+		<ScrollView
+			android:id="@+id/scroll_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_alignParentTop="true"
+			android:padding="@dimen/margin_default"
+			android:layout_above="@+id/toolbar_bottom"
+			android:layout_alignWithParentIfMissing="true"
+			>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				>
+				<!--From-->
+				<LinearLayout
+					android:id="@+id/panel_from"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="@dimen/inputs_vert_margin"
+					android:gravity="center_vertical"
+					android:visibility="gone"
+					>
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/label_from_colon"
+						android:textColor="@color/default_black"
+						/>
+
+					<Spinner
+						android:id="@+id/spinner_accounts"
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/default_input_height"
+						style="@style/AppTheme.Spinner"
+						android:popupBackground="@drawable/shape_default_white_rounded"
+						android:spinnerMode="dialog"
+						/>
+				</LinearLayout>
+				<!--To-->
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/label_to_colon"
+					android:textColor="@color/default_black"
+					android:textSize="@dimen/text_size_medium"
+					/>
+
+				<org.nem.nac.ui.controls.AutocompleteAddressInput
+					android:id="@+id/input_recipient"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:layout_marginLeft="@dimen/margin_default"
+					android:layout_marginRight="@dimen/margin_default"
+					android:hint="@string/placeholder_recipient_addr"
+					android:background="@color/white"
+					android:textColor="@color/default_black"
+					android:imeOptions="actionNext"
+					android:dropDownAnchor="@+id/drop_down_anchor"
+					/>
+
+				<View
+					android:id="@+id/drop_down_anchor"
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:background="@color/light_gray"/>
+				<!--Amount Label with balance-->
+				<TextView
+					android:id="@+id/field_balance"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:singleLine="true"
+					android:maxLines="1"
+					android:gravity="center_vertical|left"
+					android:textSize="@dimen/text_size_medium"
+					android:text="@string/label_amount_with_balance_placeholder"
+					android:ellipsize="marquee"
+					android:marqueeRepeatLimit="marquee_forever"
+					android:scrollHorizontally="true"
+					/>
+				<!--Amount input-->
+				<org.nem.nac.ui.controls.AmountInput
+					android:id="@+id/input_amount"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/margin_default"
+					android:layout_marginRight="@dimen/margin_default"
+					android:background="@color/white"
+					android:hint="@string/input_hint_enter_amount"
+					android:imeOptions="actionNext"
+					android:inputType="number|numberDecimal"
+					android:freezesText="true"
+					/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:background="@color/light_gray"/>
+
+				<!--Message-->
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:text="@string/label_message_colon"
+					android:textColor="@color/default_black"
+					android:textSize="@dimen/text_size_medium"
+					/>
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:gravity="center_vertical"
+					>
+
+					<EditText
+						android:id="@+id/input_message"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="@dimen/margin_default"
+						android:layout_marginRight="@dimen/margin_small"
+						android:layout_weight="1"
+						android:hint="@string/placeholder_input_message"
+						android:singleLine="true"
+						android:maxLines="1"
+						android:background="@color/white"
+						android:imeOptions="actionNext"
+						android:freezesText="true"
+						/>
+
+					<ImageView
+						android:id="@+id/btn_encrypt"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:scaleType="centerInside"
+						android:layout_marginLeft="1dp"
+						android:padding="@dimen/sent_tran_panel_btns_padding"
+						android:background="@drawable/shape_enc_btn_symmetric"
+						android:src="@drawable/ic_btn_enc"
+						android:clickable="true"
+						/>
+				</LinearLayout>
+
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:background="@color/light_gray"/>
+				<!--Fee-->
+				<TextView
+					android:id="@+id/label_fee"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:text="@string/label_fee_colon"
+					android:textColor="@color/default_black"
+					android:textSize="@dimen/text_size_medium"
+					/>
+
+				<org.nem.nac.ui.controls.AmountInput
+					android:id="@+id/input_fee"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:layout_marginLeft="@dimen/margin_default"
+					android:layout_marginRight="@dimen/margin_default"
+					android:hint="@string/placeholder_fee"
+					android:background="@color/white"
+					android:imeOptions="actionDone|flagNavigateNext"
+					/>
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:background="@color/light_gray"/>
+				<!--Send button-->
+				<TextView
+					android:id="@+id/btn_send"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="100dp"
+					android:minHeight="@dimen/default_input_height"
+					android:layout_marginTop="@dimen/inputs_vert_margin"
+					android:clickable="true"
+					android:gravity="center"
+					android:layout_gravity="center_horizontal"
+					android:background="@drawable/shape_green_rounded"
+					android:text="@string/btn_send"
+					android:textSize="@dimen/text_size_medium"
+					android:textColor="@color/white"
+					/>
+			</LinearLayout>
+		</ScrollView>
+
+		<include
+			layout="@layout/toolbar_bottom"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			/>
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

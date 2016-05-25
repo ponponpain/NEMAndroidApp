@@ -1,0 +1,181 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'Key'
+            keyPassword '123456'
+            storeFile file('D:/Projects/NEM/TestKeyStore/testkey.jks')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+    tasks.whenTaskAdded { task ->
+        switch (task.name) {
+            case "compileDemoDebugSources":
+            case "compileDemoReleaseSources":
+                task.dependsOn buildDemoApp
+                break;
+            default:
+                if (task.name.matches(~/^compile.+(Debug|Release)Sources$/)) {
+                    task.dependsOn buildDevApp
+                }
+                break
+        }
+    }
+    def String versionNameStr = getVersionName()
+    defaultConfig {
+        applicationId "org.nem.nac"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName versionNameStr
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            versionNameSuffix "-debug"
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+    productFlavors {
+        dev {
+        }
+        demo {
+        }
+    }
+    dexOptions {
+        jumboMode = true
+    }
+}
+
+retrolambda {
+    jdk System.getenv("JAVA8_HOME")
+    oldJdk System.getenv("JAVA7_HOME")
+    javaVersion JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.annimon:stream:1.0.5'
+    compile 'com.jakewharton.timber:timber:4.1.0'
+    compile 'com.madgag.spongycastle:prov:1.51.0.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.google.zxing:android-core:3.2.1'
+    compile 'nl.qbusict:cupboard:2.1.4'
+    compile 'com.squareup.okhttp:okhttp:2.3.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.4'
+    compile 'com.madgag.spongycastle:core:1.51.0.0'
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'ch.acra:acra:4.7.0'
+    compile 'org.mindrot:jbcrypt:0.3m'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-vision:8.4.0'
+}
+
+/**
+ * Custom staff
+ */
+def bumpVersion(def boolean bumpProduction) {
+    def PROP_MAJOR = 'version-major',
+        PROP_MINOR = 'version-minor',
+        PROP_PRODUCTION = 'production-build',
+        PROP_BUILD = 'build';
+    def File versionFile = file('version.properties');
+    if (!versionFile.exists()) {
+        if (!versionFile.createNewFile()) {
+            throw new IOException("Failed to create version file");
+        }
+    }
+
+    if (versionFile.canRead()) {
+        def Properties props = new Properties();
+        props.load(versionFile.newReader("UTF-8"));
+        def versionMajor = props.getProperty(PROP_MAJOR, "0").toInteger();
+        def versionMinor = props.getProperty(PROP_MINOR, "0").toInteger();
+        def versionProduction = props.getProperty(PROP_PRODUCTION, "0").toInteger();
+        def versionBuild = props.getProperty(PROP_BUILD, "0").toInteger();
+        if (bumpProduction) {
+            versionProduction++
+        }
+        versionBuild++
+        props.setProperty(PROP_MAJOR, versionMajor.toString());
+        props.setProperty(PROP_MINOR, versionMinor.toString())
+        props.setProperty(PROP_PRODUCTION, versionProduction.toString())
+        props.setProperty(PROP_BUILD, versionBuild.toString())
+        props.store(versionFile.newWriter("UTF-8"), "Application version information. Managed by Gradle")
+    }
+}
+
+def String getVersionName() {
+    def PROP_MAJOR = 'version-major', PROP_MINOR = 'version-minor', PROP_PRODUCTION = 'production-build', PROP_BUILD = 'build';
+    def File versionFile = file('version.properties');
+    if (!versionFile.exists()) {
+        if (!versionFile.createNewFile()) {
+            throw new IOException("Failed to create version file!")
+        }
+    }
+    if (versionFile.canRead()) {
+        def Properties props = new Properties();
+        props.load(versionFile.newReader("UTF-8"));
+        def versionMajor = props.getProperty(PROP_MAJOR, "0");
+        def versionMinor = props.getProperty(PROP_MINOR, "0");
+        def versionProduction = props.getProperty(PROP_PRODUCTION, "0").toInteger();
+        def versionBuild = props.getProperty(PROP_BUILD, "0");
+
+        return versionMajor + "." + versionMinor + "." + versionProduction + ".b" + versionBuild + " BETA";
+    } else {
+        throw new IOException("Failed to read version file!");
+    }
+}
+
+task buildDevApp << {
+    bumpVersion(false);
+    setApkName();
+}
+
+task buildDemoApp << {
+    bumpVersion(true);
+    android.defaultConfig.versionName = getVersionName()
+    setApkName();
+}
+
+def setApkName() {
+    android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+            variant.outputs.each { output ->
+                output.outputFile = new File(
+                        output.outputFile.parent,
+                        output.outputFile.name
+                                .replace("app-", "NEM-")
+                                .replace(".apk", "_v${android.defaultConfig.versionName}.apk"))
+            }
+        }
+    }
+}

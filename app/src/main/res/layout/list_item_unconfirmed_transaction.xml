@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:paddingLeft="@dimen/margin_default"
+			  android:paddingRight="@dimen/margin_default"
+			  android:paddingBottom="@dimen/margin_default"
+			  android:orientation="vertical"
+	>
+
+	<LinearLayout
+		android:id="@+id/layout_from"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_default"
+		android:orientation="horizontal"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="@dimen/margin_small_text"
+			android:text="@string/label_from_colon"
+			android:textColor="@color/white_inactive"
+			android:layout_gravity="center_vertical"
+			tools:ignore="RtlHardcoded"/>
+
+		<TextView
+			android:id="@+id/text_view_from"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_weight="1"
+			android:textColor="@color/default_black"
+			/>
+
+		<TextView
+			android:id="@+id/text_view_date"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="@dimen/margin_small_text"
+			android:layout_gravity="center_vertical"
+			android:textColor="@color/main_orange"
+			/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/layout_deadline"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_default"
+		android:orientation="horizontal"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="@dimen/margin_small_text"
+			android:text="@string/label_deadline_colon"
+			android:textColor="@color/white_inactive"
+			android:layout_gravity="center_vertical"
+			tools:ignore="RtlHardcoded"/>
+
+		<TextView
+			android:id="@+id/text_view_deadline"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:gravity="right"
+			android:layout_weight="1"
+			android:textColor="@color/main_orange"
+			/>
+	</LinearLayout>
+
+	<!--Transfer-->
+	<LinearLayout
+		android:id="@+id/layout_transfer"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_default"
+		android:orientation="vertical"
+		android:visibility="gone"
+		>
+
+		<!--TO-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/margin_small_text"
+				android:text="@string/label_to_colon"
+				android:textColor="@color/white_inactive"
+				android:layout_gravity="center_vertical"
+				tools:ignore="RtlHardcoded"/>
+
+			<TextView
+				android:id="@+id/text_view_to"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="right"
+				android:layout_weight="1"
+				android:textColor="@color/default_black"
+				/>
+		</LinearLayout>
+
+		<!--Message-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:orientation="horizontal"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/margin_small_text"
+				android:text="@string/label_message_colon"
+				android:textColor="@color/white_inactive"
+				android:layout_gravity="center_vertical"
+				tools:ignore="RtlHardcoded"/>
+
+			<TextView
+				android:id="@+id/text_view_message"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="right"
+				android:layout_weight="1"
+				android:textColor="@color/default_black"
+				/>
+		</LinearLayout>
+
+		<!--Amount-->
+		<LinearLayout
+			android:id="@+id/layout_amount"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:orientation="horizontal"
+			android:visibility="gone"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/margin_small_text"
+				android:text="@string/label_amount_colon"
+				android:textColor="@color/white_inactive"
+				android:layout_gravity="center_vertical"
+				tools:ignore="RtlHardcoded"/>
+
+			<TextView
+				android:id="@+id/text_view_amount"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="right"
+				android:layout_weight="1"
+				android:textColor="@color/default_black"
+				/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/margin_small_text"
+				android:text="@string/text_XEM"
+				android:textColor="@color/main_green"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+
+	<!--Aggregate modification-->
+	<LinearLayout
+		android:id="@+id/layout_aggregate_modification"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+
+
+		>
+		<!-- Min cosigs change -->
+		<LinearLayout
+			android:id="@+id/layout_min_cosignatories"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:orientation="horizontal"
+			>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="@dimen/margin_small_text"
+				android:text="@string/label_min_cosignatories_colon"
+				android:textColor="@color/white_inactive"
+				android:layout_gravity="center_vertical"
+				tools:ignore="RtlHardcoded"/>
+
+			<TextView
+				android:id="@+id/text_view_min_cosignatories"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:gravity="right"
+				android:layout_weight="1"
+				android:textColor="@color/default_black"
+				/>
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:text="@string/label_changes_colon"
+			android:textColor="@color/white_inactive"
+			/>
+		<!-- Cosignatories changes -->
+		<LinearLayout
+			android:id="@+id/layout_cosignatories"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:orientation="vertical"
+			>
+
+		</LinearLayout>
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/button_confirm"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/margin_default"
+		android:layout_gravity="center_horizontal"
+		android:text="@string/button_confirm_text"
+		android:background="@color/main_green"
+		android:textColor="@color/white"
+		android:textAllCaps="true"
+		android:visibility="gone"
+		/>
+
+</LinearLayout>

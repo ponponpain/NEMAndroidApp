@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/default_gray_background"
+	tools:context="org.nem.nac.ui.activities.CreateAccountActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+
+	</android.support.design.widget.AppBarLayout>
+
+	<!--Import key-->
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="@dimen/dialog_min_width"
+		android:layout_marginLeft="@dimen/margin_default"
+		android:layout_marginRight="@dimen/margin_default"
+		android:orientation="vertical"
+		android:layout_gravity="center"
+		android:background="@color/transparent">
+		<!-- Content -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="@dimen/popup_content_top_padding"
+			android:orientation="vertical"
+			android:background="@drawable/shape_popup_content"
+			>
+			<org.nem.nac.ui.controls.PrivateKeyInput
+				android:id="@+id/input_private_key"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/AppTheme.InputGroupDefaultInput"
+				android:hint="@string/input_hint_private_key"
+				/>
+			<EditText
+				android:id="@+id/input_account_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/AppTheme.InputGroupInputBorderless"
+				android:hint="@string/input_hint_create_account_name"
+				/>
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/btn_create_account_confirm"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/popup_default_input_height"
+			android:layout_marginTop="0dp"
+			android:text="@string/btn_inputgroup_create_account"
+			style="@style/AppTheme.InputGroupConfirmButton"
+			/>
+	</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+	>
+
+	<TextView
+		android:id="@+id/text_view_transaction_sender"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"
+		android:textSize="10sp"
+		android:textColor="@color/default_black"
+		tools:ignore="RtlHardcoded"/>
+
+	<TextView
+		android:id="@+id/text_view_transaction_message"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:layout_toLeftOf="@+id/text_view_transaction_date"
+		android:layout_below="@+id/text_view_transaction_sender"
+		android:textColor="@color/main_text"
+		tools:ignore="RtlHardcoded"/>
+
+	<TextView
+		android:id="@+id/text_view_transaction_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_below="@+id/text_view_transaction_sender"
+		android:textColor="@color/main_orange"
+		tools:ignore="RtlHardcoded"/>
+
+</RelativeLayout>

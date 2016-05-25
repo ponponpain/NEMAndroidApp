@@ -1,0 +1,74 @@
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingLeft="@dimen/margin_default"
+	android:paddingRight="@dimen/margin_default"
+	android:paddingBottom="@dimen/margin_default"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="16dp"
+		android:gravity="center_horizontal"
+		>
+	<!--Input group-->
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="@dimen/dialog_min_width"
+		android:orientation="vertical"
+		android:background="@color/transparent">
+		<!-- Content -->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="@dimen/popup_content_top_padding"
+			android:orientation="vertical"
+			android:background="@drawable/shape_popup_content"
+			>
+			<!--Name-->
+			<TextView
+				android:id="@+id/field_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/AppTheme.InputGroupDefaultInput"
+				android:hint="@string/input_hint_name"
+				/>
+			<!--Amount-->
+			<org.nem.nac.ui.controls.AmountInput
+				android:id="@+id/input_amount"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/input_hint_amount"
+				style="@style/AppTheme.InputGroupDefaultInput"
+				android:singleLine="true"
+				android:maxLines="1"
+				android:imeOptions="actionNext"
+				/>
+			<!--Message-->
+			<EditText
+				android:id="@+id/input_message"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/input_hint_message"
+				style="@style/AppTheme.InputGroupInputBorderless"
+				android:singleLine="true"
+				android:maxLines="1"
+				android:imeOptions="actionDone"
+				/>
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/btn_create"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/popup_default_input_height"
+			android:layout_marginTop="0dp"
+			android:text="@string/btn_create_invoice"
+			style="@style/AppTheme.InputGroupConfirmButton"
+			/>
+	</LinearLayout>
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/view_activity_root"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/login_activity_background"
+	tools:context="org.nem.nac.ui.activities.LoginActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_horizontal"
+		>
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_finger_scan"
+			android:layout_marginTop="80dp"
+			android:visibility="gone"
+			/>
+
+		<!--Input group-->
+		<LinearLayout
+			android:id="@+id/layout_dialog"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="80dp"
+			android:minWidth="@dimen/dialog_min_width"
+			android:orientation="vertical"
+			android:layout_gravity="center"
+			android:background="@color/transparent">
+			<!-- Title -->
+			<TextView
+				android:id="@+id/label_dialog_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/AppTheme.InputGroupTitle"
+				android:textAllCaps="true"
+				android:text="@string/title_password_request_dialog"
+				/>
+			<!-- Content -->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="@dimen/popup_content_top_padding"
+				android:orientation="vertical"
+				android:background="@drawable/shape_popup_content"
+				>
+
+				<EditText
+					android:id="@+id/input_password"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:inputType="textPassword"
+					style="@style/AppTheme.InputGroupInputBorderless"
+					/>
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/btn_login"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="@dimen/popup_default_input_height"
+				android:layout_marginTop="0dp"
+				android:text="@string/btn_log_in"
+				style="@style/AppTheme.InputGroupConfirmButton"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,122 @@
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/margin_default"
+	android:background="@color/white"
+	tools:context="org.nem.nac.ui.fragments.MyInfoFragment"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:text="@string/label_my_address_colon"
+			/>
+
+		<TextView
+			android:id="@+id/field_my_address"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:textIsSelectable="true"
+			android:textColor="@color/default_black"
+			android:textStyle="bold"
+			/>
+		<!--Address Buttons-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/margin_default"
+			android:gravity="center"
+			>
+
+			<TextView
+				android:id="@+id/btn_copy_address"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/AppTheme.ActionButton"
+				android:text="@string/btn_copy_address"
+				/>
+
+			<TextView
+				android:id="@+id/btn_share_address"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/margin_small"
+				style="@style/AppTheme.ActionButton"
+				android:text="@string/btn_share_address"
+				/>
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:text="@string/label_my_name_colon"
+			/>
+		<!--Name-->
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:gravity="center_vertical"
+			>
+
+			<TextView
+				android:id="@+id/field_my_name"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:textIsSelectable="true"
+				android:textColor="@color/light_gray"
+				android:focusable="false"
+				/>
+
+			<TextView
+				android:id="@+id/btn_edit_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/btn_edit"
+				android:drawableRight="@drawable/ic_hd_edit"
+				android:textColor="@color/official_green"
+				/>
+		</LinearLayout>
+
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:background="@color/light_gray"
+			/>
+
+		<org.nem.nac.ui.controls.QrImageView
+			android:id="@+id/imageview_qr"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			/>
+		<!--QR Button-->
+		<TextView
+			android:id="@+id/btn_share_qr"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/inputs_vert_margin"
+			android:layout_gravity="center_horizontal"
+			style="@style/AppTheme.ActionButton"
+			android:text="@string/btn_share_qr"
+			android:clickable="false"
+			android:enabled="false"
+			/>
+
+	</LinearLayout>
+</ScrollView>
+

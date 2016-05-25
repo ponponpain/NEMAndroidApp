@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:id="@+id/item_main"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:gravity="right"
+	>
+
+	<TextView
+		android:id="@+id/label_date"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="@dimen/margin_small"
+		android:textSize="@dimen/text_size_small"
+		/>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		>
+		<!--Message item-->
+		<LinearLayout
+			android:id="@+id/panel_message"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_weight="1"
+			android:padding="@dimen/default_side_padding"
+			android:gravity="right"
+			android:background="@drawable/shape_unconfirmed_message"
+			android:layout_marginBottom="@dimen/margin_small"
+			>
+
+			<TextView
+				android:id="@+id/label_message"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/white"
+				android:textIsSelectable="true"
+				android:textSize="@dimen/abc_text_size_medium_material"
+				/>
+
+			<TextView
+				android:id="@+id/label_amount"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="@color/white"
+				android:textSize="@dimen/abc_text_size_medium_material"
+				/>
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/label_info"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:paddingLeft="@dimen/margin_small"
+			android:visibility="invisible"
+			android:textSize="@dimen/text_size_extra_small"
+			/>
+	</LinearLayout>
+</LinearLayout>

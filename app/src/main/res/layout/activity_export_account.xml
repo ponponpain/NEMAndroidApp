@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="@color/white"
+	tools:context="org.nem.nac.ui.activities.ExportAccountActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<include layout="@layout/toolbar_top"/>
+	</android.support.design.widget.AppBarLayout>
+	<!--Content-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginTop="?attr/actionBarSize"
+		>
+
+		<ScrollView
+			android:id="@+id/scroll_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingBottom="@dimen/margin_default"
+			android:layout_alignParentTop="true"
+			android:layout_above="@+id/toolbar_bottom"
+			>
+
+			<LinearLayout
+				android:id="@+id/layout_main"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:gravity="center_horizontal"
+				>
+
+				<org.nem.nac.ui.controls.QrImageView
+					android:id="@+id/imageview_qr"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/margin_default"
+					/>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/margin_default"
+					android:orientation="horizontal">
+					<!--Button-->
+					<TextView
+						android:id="@+id/btn_share_qr"
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/default_input_height"
+						android:text="@string/btn_share_qr"
+						style="@style/AppTheme.ActionButton"
+						/>
+					<!--Show private key button-->
+					<TextView
+						android:id="@+id/btn_show_private_key"
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/default_input_height"
+						android:layout_marginLeft="@dimen/margin_small"
+						android:text="@string/btn_show_private_key"
+						style="@style/AppTheme.ActionButton"
+						/>
+				</LinearLayout>
+
+				<!--Pub key label-->
+				<TextView
+					android:id="@+id/label_public_key"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="@dimen/margin_default"
+					android:paddingRight="@dimen/margin_default"
+					android:layout_marginTop="@dimen/margin_default"
+					android:text="@string/label_public_key"
+					/>
+				<!--Pub key field-->
+				<TextView
+					android:id="@+id/textview_public_key"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="@dimen/margin_default"
+					android:paddingRight="@dimen/margin_default"
+					android:layout_marginTop="@dimen/margin_default"
+					android:textIsSelectable="true"
+					android:textColor="@color/default_black"
+					/>
+				<!--Priv key label-->
+				<TextView
+					android:id="@+id/label_private_key"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="@dimen/margin_default"
+					android:paddingRight="@dimen/margin_default"
+					android:layout_marginTop="@dimen/margin_default"
+					android:text="@string/label_private_key"
+					android:visibility="gone"
+					/>
+				<!--Priv key field-->
+				<TextView
+					android:id="@+id/textview_private_key"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:paddingLeft="@dimen/margin_default"
+					android:paddingRight="@dimen/margin_default"
+					android:layout_marginTop="@dimen/margin_default"
+					android:textIsSelectable="true"
+					android:textColor="@color/default_black"
+					android:visibility="gone"
+					/>
+
+
+			</LinearLayout>
+		</ScrollView>
+
+		<include layout="@layout/toolbar_bottom"/>
+
+	</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

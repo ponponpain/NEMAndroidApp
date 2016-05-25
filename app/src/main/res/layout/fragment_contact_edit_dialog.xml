@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  xmlns:app="http://schemas.android.com/apk/res-auto"
+			  android:orientation="vertical"
+			  android:background="@drawable/shape_popup_content"
+	>
+
+	<EditText
+		android:id="@+id/input_name"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		style="@style/AppTheme.InputGroupDefaultInput"
+		android:hint="@string/input_hint_name"
+		android:maxLines="1"
+		android:singleLine="true"
+		/>
+
+	<org.nem.nac.ui.controls.AutocompleteAddressInput
+		android:id="@+id/input_address"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:disableSuggestions="true"
+		style="@style/AppTheme.InputGroupInputBorderless"
+		android:hint="@string/input_hint_address"
+		/>
+</LinearLayout>

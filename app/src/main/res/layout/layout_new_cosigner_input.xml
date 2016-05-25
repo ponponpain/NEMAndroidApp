@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+	>
+
+	<org.nem.nac.ui.controls.CosignerInput
+		android:id="@+id/input_new_cosigner"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="@dimen/default_input_height"
+		android:background="@color/transparent"
+		android:hint="@string/input_hint_new_cosigner"
+		/>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_marginTop="@dimen/margin_default"
+		android:layout_marginBottom="@dimen/margin_default"
+		android:background="@color/light_gray"/>
+</LinearLayout>
