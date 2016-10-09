@@ -68,10 +68,10 @@
  <string name="input_hint_invoice_postfix">接尾辞</string>
  <string name="label_invoice_message_overall_length">全長: %1$d/%2$d</string>
  <string name="errormessage_message_too_long">メッセージが長すぎます！</string>
- <string name="email_body_share_invoice">%1$s: %2$s からのNEM請求書</string>
+ <string name="email_body_share_invoice">%1$s からのNEM請求書: %2$s </string>
  <string name="email_subject_share_invoice">%1$s からのNEM請求書</string>
  <string name="action_chooser_share_invoice">請求書の共有</string>
- <string name="message_account_imported">%1$s はインポートされました</string>
+ <string name="message_account_imported">%1$s をインポートしました</string>
  <string name="errormessage_failed_to_init_camera">カメラ起動に失敗しました！カメラが別のアプリによってロックされている可能性があります</string>
  <string name="errormessage_host_empty">ホストは必ず入力してください</string>
  <string name="errormessage_invalid_hostname">ホスト名が無効です</string>
