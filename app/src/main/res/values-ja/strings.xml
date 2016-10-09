@@ -6,7 +6,7 @@
  <string name="text_error">エラー</string>
  <string name="title_activity_import_key">プライベートキー（秘密鍵）をインポート</string>
  <string name="title_activity_scan_qr">アカウントをスキャン</string>
- <string name="errormessage_device_doesnt_have_camera">このデバイスではカメラが使用出来ません</string>
+ <string name="errormessage_device_doesnt_have_camera">この端末ではカメラが使用出来ません</string>
  <string name="title_activity_dashboard">ダッシュボード</string>
  <string name="text_XEM">XEM</string>
  <string name="errormessage_internal_error">内部エラー</string>
@@ -85,7 +85,7 @@
  <string name="btn_add_custom_server">カスタムサーバーを追加する</string>
  <string name="errormessage_invalid_protocol">httpのみサポートされています</string>
  <string name="btn_log_in">ログイン</string>
- <string name="title_password_request_dialog">パスワードを入力してください。</string>
+ <string name="title_password_request_dialog">パスワードを入力してください</string>
  <string name="title_activity_add_account">アカウント追加</string>
  <string name="btn_create_new_account">新規作成</string>
  <string name="btn_scan_qr">QRスキャン</string>
@@ -105,8 +105,8 @@
  <string name="progress_dialog_message_waiting_for_server">読み込んでいます...</string>
  <string name="errormessage_http_request_failed">リクエストは失敗しました！</string>
  <string name="errormessage_no_server">有効なサーバーではありません</string>
- <string name="dialog_title_account_export_password">エクスポート・パスワードをセットする</string>
- <string name="dialog_title_account_import_password">インポート・パスワードを入力する</string>
+ <string name="dialog_title_account_export_password">エクスポートパスワードを設定する</string>
+ <string name="dialog_title_account_import_password">インポートパスワードを入力する</string>
  <string name="toolbar_btn_dashboard">ダッシュボード</string>
  <string name="toolbar_btn_addr_book">アドレス帳</string>
  <string name="toolbar_btn_more">その他</string>
@@ -135,8 +135,8 @@
  <string name="errormessage_fee_less_than_min">手数料が最小値以下です</string>
  <string name="errormessage_failed_to_import_account">アカウントをインポート出来ませんでした</string>
  <string name="btn_share_qr">QRを共有する</string>
- <string name="email_body_share_account">%s.アカウントをインポートするためにQRをスキャンする</string>
- <string name="email_subject_share_account">NEMを %s. アカウントにエクスポートしました</string>
+ <string name="email_body_share_account">QRをスキャンして %s アカウント情報をインポートします</string>
+ <string name="email_subject_share_account">NEM: %s アカウント情報</string>
  <string name="action_chooser_share_account">NEMアカウント</string>
  <string name="label_checkbox_use_app_password">アプリケーションパスワードを使用する</string>
  <string name="errormessage_failed_to_export_account">アカウントのエクスポートに失敗しました！</string>
@@ -146,7 +146,7 @@
  <string name="label_my_address_colon">アドレス:</string>
  <string name="btn_copy_address">アドレスをコピー</string>
  <string name="btn_share_address">アドレスを共有</string>
- <string name="label_my_name_colon">名前:</string>
+ <string name="label_my_name_colon">ラベル名:</string>
  <string name="errormessage_account_error">アカウントエラー</string>
  <string name="input_hint_enter_amount">数量を入れてください</string>
  <string name="btn_create_invoice">作成</string>
@@ -225,7 +225,7 @@
  <string name="notification_updates_title">NEMアップデート</string>
  <string name="notification_updates_text">%1$s: %2$d との新しい取引</string>
  <string name="btn_show_private_key">プライベートキー（秘密鍵）を表示する</string>
-<string name="message_private_key_exposure_warning_html">プライベートキー（秘密鍵）はあなたのアカウント情報において最も重要であり、機密事項として非常に注意して取り扱う必要があります。&lt;br/>&lt;br/>&lt;font color="#7D1010">関連する資金と資産を制御し、あなたのアカウントを元に戻すために必要なものになります。&lt;/font>.&lt;br/>&lt;br/>&lt;font color="#7D1010">絶対に無くしたり外部に漏れないようご注意ください。&lt;/font></string>
+<string name="message_private_key_exposure_warning_html">プライベートキー（秘密鍵）はあなたのアカウント情報において最も重要な機密事項であり、注意して取り扱う必要があります。&lt;br/>&lt;br/>&lt;font color="#7D1010">関連する資金と資産を制御し、あなたのアカウントを元に戻すために必要なものになります。&lt;/font>.&lt;br/>&lt;br/>&lt;font color="#7D1010">絶対に無くしたり外部に漏れないようご注意ください。&lt;/font></string>
  <string name="btn_i_understand">私は内容を理解しました</string>
  <string name="label_private_key">プライベートキー（秘密鍵）</string>
  <string name="server_result_code_success">成功</string>
